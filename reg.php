@@ -1,25 +1,22 @@
 <html>
 <head>
-<header('Content-type: text/html; charset="utf-8") >
     <meta charset="UTF-8">
-    <title>Регистрация</title>
+    <title>Уравнение</title>
 	<link rel="stylesheet" href="css/style.css">
 	<script
   src="https://code.jquery.com/jquery-2.2.4.js"
   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
   crossorigin="anonymous"></script>
-  
 </head>
 <body>	
-	
-<script>
+<script
   src="https://code.jquery.com/jquery-2.2.4.js"
   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
   crossorigin="anonymous"></script>
 
-<div>Регистрация</div>
+ 
+<p>Регистрация<p>
 
-</div>
   <table align = "center">
 	  
 			<tr>
@@ -36,23 +33,21 @@
 	 
   <p>Введите ФИО</p>
   <p>
-    <input type = "text" name ="fio" class="fio" required>
+    <input type = "text" name ="fio" class="fio">
   </p>
   <p>Введите Email </p>
-  <input type = "text" name ="fio" class="milo" required>
+  <input type = "text" name ="fio" class="milo">
   <p>Введите Пароль </p>
 			    <p>
-			      <input type = "text" name ="b" class="par" required>
+			      <input type = "text" name ="b" class="par">
 		        </p>
 				<p>Повторите Пароль </p>
 			    <p>
-			      <input type = "text" name ="b" class="parPov" required><p id="parolsnesov" style="color:red;"></p>
+			      <input type = "text" name ="b" class="parPov"><p id="parolsnesov" style="color:red;"></p>
 		        </p>
-				<input type="checkbox" name="a" id = "obrabotka" required> Согласен на обработку персональных данных
+				<input type="checkbox" name="a" id = "obrabotka"> Согласен на обработку персональных данных
 				<p>&nbsp;</p>
 <button name = "b1" class= "otpravka">Регистрация  </button>
-
-
 <p><a href="index.php">Назад</a></p>
 		
 			</th>
