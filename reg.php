@@ -76,25 +76,12 @@
     
   
   }
-  /* header {
-    margin-bottom: 30px;
-    background-color: black;
-    color: white;
-  
-  } */
   .container{
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     
   }
-  /* .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    
-  } */
-  
   .logo {
     width: 50px;
     height: 50px;
@@ -166,32 +153,6 @@
     color: rgb(0, 0, 0);
     font-size: 20px;
     font-family: Impact, Charcoal, sans-serif;
-  }
-  
-  .dyd{
-    text-align:center;
-    display: block;
-    
-  }
-  .dydo{
-    font-size: 20px;
-  }
-  .search{
-    font-size: 20px;
-  }
-  .title_sign{
-    padding-bottom:20px;
-    font-size: 22px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    text-align: center;
-  }
-  .sing-inp{
-    padding-bottom:10px;
-    font-size: 12px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    text-align: center;
   }
   
   
