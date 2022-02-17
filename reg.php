@@ -1,139 +1,42 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Уравнение</title>
-	<link rel="stylesheet" href="css/style.css">
-	<script
-  src="https://code.jquery.com/jquery-2.2.4.js"
-  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
-  crossorigin="anonymous"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_reg.css">
+    <title>Грум-Рум</title>
 </head>
-<body>	
-<script
-  src="https://code.jquery.com/jquery-2.2.4.js"
-  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+<div align ="center">
+<body>
+<form action="php/register.php" method="post" id="regist">
+        <div class="sign_in">
+            <div class="container">
+                <div class="sign-content">
+                    <h1>Регистрация</h1><br><br>
+
+                    <input type="text" name='sso' class='sing-inp' placeholder="Введите ФИО"  pattern="^[А-Яа-яЁё\s]+$" id="fio" required><br>
+                    <input type="text" name='login' class='sing-inp' placeholder="Введите логин"  pattern="^[a-zA-Z]+$" id="login" required> <br>
+                    <input type="email" name='mail' class='sing-inp' placeholder="Введите почту"  id="mail" required> <br>
+                    <input type="text" name='pass' class='sing-inp' placeholder="Введите пароль" id="pass" required> <br>
+                    <input type="text" name='pass_repeat' class='sing-inp' placeholder="Повтор пароля"  id="repeat-pass" required> <br>
+                    <input type="checkbox" name="" id="sogl" required><label for="sogl">Согласисие на обработку персональных данных </label><br>
+                    <br>
+                    <input type="submit" name="sub" class="registr" value="Зарегистрироваться">
+                   <h1 id="result"></h1>
+                   <p><a href="index.php">Назад</a></p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </form>
+    
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
   crossorigin="anonymous"></script>
+    <script src="script-sign.js">
 
- 
-<p>Регистрация<p>
-
-  <table align = "center">
-	  
-			<tr>
-			  <th>
-			    <p>Введите Логин </p>
-			    <p>
-			      <input  type = "text" name ="a" class = "log" >
-		        </p>
-			
-			    </th>
-	    </table><table align = "center">
-	<tr>
-	  <th>
-	 
-  <p>Введите ФИО</p>
-  <p>
-    <input type = "text" name ="fio" class="fio">
-  </p>
-  <p>Введите Email </p>
-  <input type = "text" name ="fio" class="milo">
-  <p>Введите Пароль </p>
-			    <p>
-			      <input type = "text" name ="b" class="par">
-		        </p>
-				<p>Повторите Пароль </p>
-			    <p>
-			      <input type = "text" name ="b" class="parPov"><p id="parolsnesov" style="color:red;"></p>
-		        </p>
-				<input type="checkbox" name="a" id = "obrabotka"> Согласен на обработку персональных данных
-				<p>&nbsp;</p>
-<button name = "b1" class= "otpravka">Регистрация  </button>
-<p><a href="index.php">Назад</a></p>
-		
-			</th>
-	  </table>
-
-	
-
-<script>
-	$('button.test').on('click', function(){
-		
-		var emailValue = $('input.milo').val();
-		
-   		
-		if(re5.test(emailValue)){
-console.log("получилосьvalid");
-		}
-		else console.log("is not valid");
-	
-		
-
-
-	})	
-	$(document).ready(function(){
-		$('button.otpravka').on('click', function(){
-			var parValue = $('input.par').val();
-			var parPovValue = $('input.parPov').val();
-			var logValue = $('input.log').val();
-			var fioValueqq = $('input.fio').val();
-			var emailValue = $('input.milo').val();
-			var chbox;
-			chbox=document.getElementById('obrabotka');
-			const re = fioValueqq.split(" ");
-			var mailCheks = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-			if(re.length==3){
-	var znach1=re[0];
-	var znach2=re[1];
-	var znach3=re[2];
-	let match1 = /^[а-яё]*$/i.test(znach1);
-	let match2 = /^[а-яё]*$/i.test(znach2);
-	let match3 = /^[а-яё]*$/i.test(znach3);
-	
-	if(logValue!=""&&parValue!=""&&parValue==parPovValue&&match1&&match2&&match3&&chbox.checked&&mailCheks.test(emailValue)){
-				var itog = parValue;
-				var fioValue = znach1+" "+znach2+" "+znach3;
-				console.log(fioValue);
-				document.getElementById("parolsnesov").innerHTML = "Аккаунт создан";
-				//var fioValue = $('input.fio').val();
-			
-			
-			console.log(emailValue);
-			$.ajax({
-  method: "POST",
-  url: "some.php",
-  data: { log: logValue, emailz: emailValue,par: itog,fio:fioValue}
-})
-  .done(function(  ) {
-    //alert( "Data Saved: " + msg );
-  });
-		}else  document.getElementById("parolsnesov").innerHTML = "ФИО введен не коректно или не заполнены другие поля";
-//	console.log(znach1+" "+znach2+" "+znach3);
-		}else  document.getElementById("parolsnesov").innerHTML = "ФИО введен не коректно или не заполнены другие поля";
-
-		if(parValue!=parPovValue){
-		document.getElementById("parolsnesov").innerHTML = "Пароли не совпадают";
-	}
-
-		if(!chbox.checked){
-		document.getElementById("parolsnesov").innerHTML = "Согласитесь на обработку данных";
-	}
-		if(!mailCheks.test(emailValue)){
-			document.getElementById("parolsnesov").innerHTML = "Майл введен не коректно";
-		}
-		if(logValue==""&&parValue==""){
-		document.getElementById("parolsnesov").innerHTML = "Пожалуйста введите логин и пароль";
-	}
-
-			//let match = /^[а-яё]*$/i.test(fioValueqq);
-			
-		
-		
-			
-		
-		})
-
-	});
-	
-  </script>
+    </script>
 </body>
 </html>
